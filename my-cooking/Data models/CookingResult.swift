@@ -28,4 +28,15 @@ extension CookingResult {
         return NSLocalizedString(rawValue, comment: "")
     }
 
+    var rating: Int {
+        switch self {
+        case .totalDisaster:
+            return 1
+        case .itWasEdible:
+            return 2
+        case .perfection:
+            return 3
+        }
+    }
+
 }

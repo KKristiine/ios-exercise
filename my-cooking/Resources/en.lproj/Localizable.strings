@@ -18,3 +18,7 @@
 "save_attempt_sheet_message" = "How did it go?";
 
 "cancel" = "Cancel";
+
+"all_recipes_tried_title" = "Recommendation";
+"all_recipes_tried_message" = "You have tried all recipes.";
+"ok" = "Ok";

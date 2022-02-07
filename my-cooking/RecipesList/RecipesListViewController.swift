@@ -17,7 +17,8 @@ class RecipesListViewController: UIViewController {
 
     // MARK: - Dependencies
 
-    private let repository = RecipesRepository.shared
+    private let recipesRepository = RecipesRepository.shared
+    private let recommendationRepository = RecommendationRepository.shared
     private lazy var datasource: SectionedTableDatasource<Recipe> = {
         let datasource = SectionedTableDatasource<Recipe>()
         datasource.configureCell = { (element, cell) in
@@ -53,7 +54,7 @@ class RecipesListViewController: UIViewController {
     }
 
     private func loadData() {
-        repository.sectionedRecipes { [weak self] (result) in
+        recipesRepository.sectionedRecipes { [weak self] (result) in
             switch result {
             case .success(let sections):
                 self?.datasource.sections = sections
@@ -79,8 +80,33 @@ class RecipesListViewController: UIViewController {
         }
     }
 
+    @IBAction func onButtonTap(_ sender: Any) {
+        recommendationRepository.getRecommendation { [weak self] result in
+            switch result {
+            case .success(let recipe):
+                guard let recipe = recipe else {
+                    self?.showNoRecommendationAlert()
+                    return
+                }
+                self?.performSegue(withIdentifier: "ShowDetailsScreen", sender: recipe)
+            default:
+                break
+            }
+        }
+    }
+
     @IBAction func unwindFromRecipeViewController(_ segue: UIStoryboardSegue) {
 
+    }
+
+    private func showNoRecommendationAlert() {
+        let alert = UIAlertController(title: NSLocalizedString("all_recipes_tried_title", comment: ""),
+                                      message: NSLocalizedString("all_recipes_tried_message", comment: ""),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""),
+                style: .cancel,
+                handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Recipe: Decodable {
+struct Recipe: Decodable, Equatable {
 
     var id: UUID
     var title: String

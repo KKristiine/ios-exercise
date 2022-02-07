@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dNn-Bo-7pM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyc-9g-NzQ">
+                                <rect key="frame" x="0.0" y="743" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Frj-Rt-Hco"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show recommended recipe"/>
+                                <connections>
+                                    <action selector="onButtonTap:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5al-7M-hfU"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dNn-Bo-7pM" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="3Q3-Sc-5ko"/>
+                            <constraint firstItem="kyc-9g-NzQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="HKR-GN-NDG"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="kyc-9g-NzQ" secondAttribute="bottom" id="and-58-ytL"/>
+                            <constraint firstItem="kyc-9g-NzQ" firstAttribute="top" secondItem="dNn-Bo-7pM" secondAttribute="bottom" id="eQM-Xd-bHP"/>
                             <constraint firstItem="dNn-Bo-7pM" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="jSe-y3-i7f"/>
-                            <constraint firstAttribute="bottom" secondItem="dNn-Bo-7pM" secondAttribute="bottom" id="ns5-mE-sba"/>
+                            <constraint firstAttribute="trailing" secondItem="kyc-9g-NzQ" secondAttribute="trailing" id="ol4-Rr-Rmp"/>
                             <constraint firstAttribute="trailing" secondItem="dNn-Bo-7pM" secondAttribute="trailing" id="u9M-5I-RoH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recipes" image="first" id="acW-dT-cKf"/>
                     <connections>
@@ -75,19 +93,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHT-KL-WAY">
-                                        <rect key="frame" x="20" y="453.5" width="98" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHT-KL-WAY">
+                                        <rect key="frame" x="20" y="453.5" width="99" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
                                         <state key="normal" title="Close"/>
                                         <connections>
                                             <segue destination="9yI-5S-e2c" kind="unwind" unwindAction="unwindFromRecipeViewController:" id="vbQ-zj-np2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8af-wC-URy">
-                                        <rect key="frame" x="138" y="453.5" width="256" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8af-wC-URy">
+                                        <rect key="frame" x="139" y="453.5" width="255" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Have you cooked this dish?"/>
                                         <connections>
                                             <action selector="saveAttemptedRecipe:" destination="WHJ-Cg-Moi" eventType="touchUpInside" id="Sf6-AZ-DWO"/>
@@ -117,14 +135,14 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XR7-C7-HWL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0Aq-HI-vMh" secondAttribute="bottom" id="4nC-fM-y89"/>
                             <constraint firstAttribute="trailing" secondItem="0Aq-HI-vMh" secondAttribute="trailing" id="ELN-al-AL8"/>
                             <constraint firstItem="0Aq-HI-vMh" firstAttribute="top" secondItem="GnW-ZS-mWO" secondAttribute="top" id="Iaf-WG-9By"/>
                             <constraint firstItem="0Aq-HI-vMh" firstAttribute="leading" secondItem="GnW-ZS-mWO" secondAttribute="leading" id="Tqm-Xe-phd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="XR7-C7-HWL"/>
                     </view>
                     <connections>
                         <outlet property="difficultyLabel" destination="iwF-d3-m1b" id="rFa-2C-PxA"/>
@@ -151,6 +169,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="IDx-JK-vCI" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="9YL-8a-Jhs"/>
@@ -158,7 +177,6 @@
                             <constraint firstItem="IDx-JK-vCI" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="OX9-bR-qoO"/>
                             <constraint firstAttribute="bottom" secondItem="IDx-JK-vCI" secondAttribute="bottom" id="ejg-yN-wD8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Attempted" image="second" id="cPa-gy-q4n"/>
                     <connections>
@@ -178,7 +196,7 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemIndigoColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -190,12 +208,21 @@
             <point key="canvasLocation" x="-184" y="-1"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ctr-hn-JlI"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
         <image name="first" width="24" height="24"/>
         <image name="second" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zx6-XY-YaT"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
