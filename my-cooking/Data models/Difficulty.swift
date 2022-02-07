@@ -9,7 +9,7 @@
 import UIKit
 
 /// Represents recipe difficulty.
-enum Difficulty: String, Decodable {
+enum Difficulty: String, Decodable, CaseIterable {
 
     case easy
     case normal

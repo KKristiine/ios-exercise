@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43B340D527B0432B0054B039 /* SectionedTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B340D427B0432B0054B039 /* SectionedTableDatasource.swift */; };
+		43B340D927B05A0C0054B039 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B340D827B05A0C0054B039 /* TableSection.swift */; };
 		4E01201FA6F2B69F58D05990 /* Pods_my_cooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27AD00A78DDE6127E233C9A /* Pods_my_cooking.framework */; };
 		B4EA5DC7E6F4D33F27966241 /* Pods_my_cookingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB585E8893C0C9FC4A949648 /* Pods_my_cookingTests.framework */; };
 		D11A84C9232F930F0058BCF6 /* Recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = D11A84C8232F930F0058BCF6 /* Recipes.plist */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		40CEBB43C8B2F165F5CEDD66 /* Pods-my-cooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my-cooking.debug.xcconfig"; path = "Target Support Files/Pods-my-cooking/Pods-my-cooking.debug.xcconfig"; sourceTree = "<group>"; };
+		43B340D427B0432B0054B039 /* SectionedTableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedTableDatasource.swift; sourceTree = "<group>"; };
+		43B340D827B05A0C0054B039 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		A2A6FE2E3F5A79FEA420713F /* Pods-my-cooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my-cooking.release.xcconfig"; path = "Target Support Files/Pods-my-cooking/Pods-my-cooking.release.xcconfig"; sourceTree = "<group>"; };
 		A5F07828AF6E764C49B29D41 /* Pods-my-cookingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-my-cookingTests.release.xcconfig"; path = "Target Support Files/Pods-my-cookingTests/Pods-my-cookingTests.release.xcconfig"; sourceTree = "<group>"; };
 		B27AD00A78DDE6127E233C9A /* Pods_my_cooking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_my_cooking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,12 +176,14 @@
 		D13F7042232F62870091886C /* Data models */ = {
 			isa = PBXGroup;
 			children = (
+				43B340D827B05A0C0054B039 /* TableSection.swift */,
 				D13F7043232F62990091886C /* Recipe.swift */,
 				D13F7045232F62A50091886C /* Dish.swift */,
 				D13F704B232F63170091886C /* Difficulty.swift */,
 				D13F704D232F64480091886C /* CookingResult.swift */,
 				D13F7055232F69320091886C /* AppError.swift */,
 				D13F7058232F70920091886C /* TableDatasource.swift */,
+				43B340D427B0432B0054B039 /* SectionedTableDatasource.swift */,
 			);
 			path = "Data models";
 			sourceTree = "<group>";
@@ -383,9 +389,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D13F7022232F601E0091886C /* AttemptedRecipesViewController.swift in Sources */,
+				43B340D527B0432B0054B039 /* SectionedTableDatasource.swift in Sources */,
 				D13F7046232F62A50091886C /* Dish.swift in Sources */,
 				D13F7056232F69320091886C /* AppError.swift in Sources */,
 				D13F701E232F601E0091886C /* AppDelegate.swift in Sources */,
+				43B340D927B05A0C0054B039 /* TableSection.swift in Sources */,
 				D13F7048232F62B60091886C /* RecipesRepository.swift in Sources */,
 				D13F7059232F70920091886C /* TableDatasource.swift in Sources */,
 				D13F704A232F62C50091886C /* DishesRepository.swift in Sources */,

@@ -45,6 +45,19 @@ class RecipesRepository {
         completion(.success(recipes))
     }
 
+    /// Loads sectioned recipes.
+    ///
+    /// - Parameter completion: A callback that is called when loading is finished.
+    func sectionedRecipes(completion: LoadCallback<[TableSection<Recipe>]>) {
+        let sections =  Difficulty.allCases.map { difficulty in
+            TableSection<Recipe>(
+                title: difficulty.localizedString,
+                elements: recipes.filter { $0.dificulty == difficulty }
+            )
+        }
+        completion(.success(sections))
+    }
+
     /// Loads an array of recipes with specified difficulty.
     ///
     /// - Parameters:

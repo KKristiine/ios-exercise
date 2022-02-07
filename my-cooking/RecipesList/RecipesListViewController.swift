@@ -18,8 +18,8 @@ class RecipesListViewController: UIViewController {
     // MARK: - Dependencies
 
     private let repository = RecipesRepository.shared
-    private lazy var datasource: TableDatasource<Recipe> = {
-        let datasource = TableDatasource<Recipe>()
+    private lazy var datasource: SectionedTableDatasource<Recipe> = {
+        let datasource = SectionedTableDatasource<Recipe>()
         datasource.configureCell = { (element, cell) in
             cell.textLabel?.text = element.title
             cell.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
@@ -53,10 +53,10 @@ class RecipesListViewController: UIViewController {
     }
 
     private func loadData() {
-        repository.allRecipes { [weak self] (result) in
+        repository.sectionedRecipes { [weak self] (result) in
             switch result {
-            case .success(let recipes):
-                self?.datasource.elements = recipes
+            case .success(let sections):
+                self?.datasource.sections = sections
                 self?.tableView.reloadData()
             case .failure(let error):
                 self?.handleError(error)
