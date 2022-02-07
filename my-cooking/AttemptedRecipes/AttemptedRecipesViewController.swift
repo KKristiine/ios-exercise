@@ -35,7 +35,7 @@ class AttemptedRecipesViewController: UIViewController {
             }
         }
         datasource.didSelectElement = { [weak self] element in
-            self?.performSegue(withIdentifier: "ShowDetailsScreen", sender: element)
+            self?.performSegue(withIdentifier: "ShowDetailsScreen", sender: element.recipe)
         }
         return datasource
     }()
